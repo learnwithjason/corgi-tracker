@@ -63,3 +63,24 @@ model Token {
 // enum TokenType {
 //   RESET_PASSWORD
 // }
+
+model Corgi {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  image     String?
+  pets      Int      @default(0)
+  boops     Int      @default(0)
+  toy       Toy?
+  toyId     Int?
+}
+
+model Toy {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  corgi     Corgi?   @relation(fields: [corgiId], references: [id])
+  corgiId   Int?
+}
