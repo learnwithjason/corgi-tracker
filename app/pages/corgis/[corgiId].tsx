@@ -30,16 +30,18 @@ export const Corgi = () => {
       <div>
         <h1>Corgi {corgi.id}</h1>
 
-        <img
-          src={corgi.image}
-          alt={corgi.name}
-          style={{
-            width: 200,
-            height: 200,
-            objectFit: "cover",
-            display: "block",
-          }}
-        />
+        {corgi.image && (
+          <img
+            src={corgi.image}
+            alt={corgi.name}
+            style={{
+              width: 200,
+              height: 200,
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+        )}
         <button onClick={incrementBoop}>Boop this corgi! ({corgi.boops})</button>
         <pre>{JSON.stringify(corgi, null, 2)}</pre>
 

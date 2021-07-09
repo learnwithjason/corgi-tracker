@@ -31,16 +31,18 @@ export const CorgisList = () => {
           <li key={corgi.id} style={{ padding: 0 }}>
             <Link href={Routes.ShowCorgiPage({ corgiId: corgi.id })}>
               <a>
-                <img
-                  src={corgi.image}
-                  alt={corgi.name}
-                  style={{
-                    width: 200,
-                    height: 200,
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
+                {corgi.image && (
+                  <img
+                    src={corgi.image}
+                    alt={corgi.name}
+                    style={{
+                      width: 200,
+                      height: 200,
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                )}
                 {corgi.name}
               </a>
             </Link>

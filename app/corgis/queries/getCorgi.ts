@@ -15,6 +15,7 @@ export default resolver.pipe(resolver.zod(GetCorgi), resolver.authorize(), async
 
   return {
     ...corgi,
-    otherThing: "waddup", // this is some custom data — can be whatever we want
+    // TODO: custom fields require changes to the types or we get type checking errors
+    // otherThing: "waddup", // this is some custom data — can be whatever we want
   }
 })
