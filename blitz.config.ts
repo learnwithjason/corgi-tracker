@@ -1,6 +1,7 @@
 import { BlitzConfig, sessionMiddleware, simpleRolesIsAuthorized } from "blitz"
 
 const config: BlitzConfig = {
+  target: "experimental-serverless-trace",
   middleware: [
     sessionMiddleware({
       cookiePrefix: "corgi-tracker",

@@ -17,7 +17,8 @@ export default resolver.pipe(
       skip,
       take,
       count: () => db.toy.count({ where }),
-      query: (paginateArgs) => db.toy.findMany({ ...paginateArgs, where, orderBy }),
+      query: (paginateArgs) =>
+        db.toy.findMany({ ...paginateArgs, where, orderBy, include: { corgi: true } }),
     })
 
     return {
